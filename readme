@@ -1,0 +1,63 @@
+# SMX Partner Application
+
+This is a Node.js and Express application designed to handle reservation notifications for the SMX Partner. It supports basic authentication and accepts various reservation statuses.
+
+## Features
+
+- Basic Authentication
+- JSON request handling
+- Reservation status processing
+
+## Technologies Used
+
+- Node.js
+- Express
+- dotenv
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js (v12.x or higher)
+- npm (v6.x or higher)
+
+### Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/ritiksingh11661/smx-partner-app.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd smx-partner-app
+    ```
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
+
+### Configuration
+
+1. Create a `.env` file in the root directory of the project and add the following environment variables:
+    ```env
+    PORT=3000
+    TEST_USERNAME=testuser
+    TEST_PASSWORD=testpassword
+    TEST_HOTEL_CODE=TEST1234
+    ```
+   Adjust the values as needed.
+
+### Running the Application
+
+To start the application, run:
+```sh
+npm start
+
+### Send a post request to the server
+
+curl -X POST http://localhost:3000/api/reservation \
+-H "Authorization: Basic $(echo -n 'testuser:testpassword' | base64)" \
+-H "Content-Type: application/json" \
+-d '{"HotelCode": "TEST1234", "ResStatus": "Reserved"}'
+
+base64 dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
